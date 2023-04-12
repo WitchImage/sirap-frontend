@@ -1,0 +1,7 @@
+dist
+tailwind.config.js
+postcss.config.js
+vite.config.ts
+.next/
+yarn.lock
+public/
