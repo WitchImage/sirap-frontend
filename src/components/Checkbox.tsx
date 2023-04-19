@@ -3,14 +3,23 @@ import { FaCheck } from 'react-icons/fa';
 interface Props {
     label: string;
     value: string;
+    name: string;
+    id?: string;
     checked: boolean;
     onChange: (checked: boolean) => void;
 }
 
-export function Checkbox({ label, checked, onChange, value }: Props) {
+export function Checkbox({
+    name,
+    id = '',
+    label,
+    checked,
+    onChange,
+    value,
+}: Props) {
     return (
         <label
-            htmlFor='my-checkbox'
+            htmlFor={id !== '' ? id : name}
             className='flex items-center space-x-2 p-5'
         >
             <div
@@ -21,10 +30,11 @@ export function Checkbox({ label, checked, onChange, value }: Props) {
                 }`}
             >
                 <input
-                    id='my-checkbox'
+                    id={name === id ? name : id}
                     type='checkbox'
                     checked={checked}
                     onChange={e => onChange(e.target.checked)}
+                    value={value}
                     className='opacity-0 absolute'
                 />
                 {checked && <FaCheck />}

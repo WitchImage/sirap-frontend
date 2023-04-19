@@ -14,6 +14,8 @@ export default function Home() {
         <main className='min-h-screen bg-background'>
             <div>
                 <Checkbox
+                    name='custom'
+                    id='custom'
                     label='Custom ✅'
                     checked={checked}
                     onChange={handleCheckboxChange}
