@@ -2,6 +2,7 @@
 // const inter = Inter({ subsets: ['latin'] });
 
 import { Checkbox } from '@/components';
+import { type GetServerSideProps } from 'next';
 import { useState } from 'react';
 
 export default function Home() {
