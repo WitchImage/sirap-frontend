@@ -1,11 +1,30 @@
 // import { Inter } from 'next/font/google';
-
-import type { GetServerSideProps } from 'next/types';
-
 // const inter = Inter({ subsets: ['latin'] });
 
-export default function Home({ data }: any) {
-    return <main className='min-h-screen bg-background'></main>;
+import { Checkbox } from '@/components';
+import { type GetServerSideProps } from 'next';
+import { useState } from 'react';
+
+export default function Home() {
+    const [checked, setChecked] = useState(false);
+
+    const handleCheckboxChange = (checked: boolean) => {
+        setChecked(checked);
+    };
+    return (
+        <main className='min-h-screen bg-background'>
+            <div>
+                <Checkbox
+                    name='custom'
+                    id='custom'
+                    label='Custom ✅'
+                    checked={checked}
+                    onChange={handleCheckboxChange}
+                    value='20'
+                />
+            </div>
+        </main>
+    );
 }
 
 export const getServerSideProps: GetServerSideProps = async context => {

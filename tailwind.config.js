@@ -40,6 +40,7 @@ module.exports = {
                 700: '#344A91',
                 800: '#1A2A5E',
             },
+            transparent: 'transparent',
         },
     },
     plugins: [],
