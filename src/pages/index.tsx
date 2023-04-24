@@ -24,7 +24,7 @@ export default function Home() {
                 />
             </div>
             <div className='flex flex-row'>
-                <Card width='w-1/4'>
+                <Card className='m-4 w-1/4 p-4'>
                     <h2 className='text-white font-medium'>Prueba para card</h2>
                     <p className='text-white'>
                         Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -33,7 +33,7 @@ export default function Home() {
                         corrupti provident! Qui fugit nobis quae laborum ipsum.
                     </p>
                 </Card>
-                <Card width='w-1/2'>
+                <Card className='m-4 w-1/2 p-4'>
                     <h2 className='text-white font-medium'>Prueba para card</h2>
                     <p className='text-white'>
                         Lorem ipsum dolor, sit amet consectetur adipisicing

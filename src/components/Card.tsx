@@ -1,13 +1,11 @@
 interface Props {
     children?: React.ReactNode;
-    width: string;
+    className: string;
 }
 
-export function Card({ children, width }: Props) {
-    console.log(width);
-
+export function Card({ children, className }: Props) {
     return (
-        <div className={`m-2 h-50 ${width} p-4  rounded-lg bg-backgroundDark`}>
+        <div className={`${className} p-4  rounded-lg bg-backgroundDark`}>
             {children}
         </div>
     );
