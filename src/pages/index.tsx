@@ -1,7 +1,7 @@
 // import { Inter } from 'next/font/google';
 // const inter = Inter({ subsets: ['latin'] });
 
-import { Checkbox } from '@/components';
+import { Card, Checkbox } from '@/components';
 import { type GetServerSideProps } from 'next';
 import { useState } from 'react';
 
@@ -22,6 +22,26 @@ export default function Home() {
                     onChange={handleCheckboxChange}
                     value='20'
                 />
+            </div>
+            <div className='flex flex-row'>
+                <Card className='m-4 w-1/4 p-4'>
+                    <h2 className='text-white font-medium'>Prueba para card</h2>
+                    <p className='text-white'>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Laboriosam consectetur dolorem odio ipsum esse,
+                        explicabo eius ex illum, dolore cumque, iusto illo
+                        corrupti provident! Qui fugit nobis quae laborum ipsum.
+                    </p>
+                </Card>
+                <Card className='m-4 w-1/2 p-4'>
+                    <h2 className='text-white font-medium'>Prueba para card</h2>
+                    <p className='text-white'>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Laboriosam consectetur dolorem odio ipsum esse,
+                        explicabo eius ex illum, dolore cumque, iusto illo
+                        corrupti provident! Qui fugit nobis quae laborum ipsum.
+                    </p>
+                </Card>
             </div>
         </main>
     );
