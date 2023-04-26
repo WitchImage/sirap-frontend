@@ -1,7 +1,7 @@
 // import { Inter } from 'next/font/google';
 // const inter = Inter({ subsets: ['latin'] });
 
-import { Card, Checkbox } from '@/components';
+import { Card, Checkbox, Select } from '@/components';
 import { type GetServerSideProps } from 'next';
 import { useState } from 'react';
 
@@ -21,6 +21,15 @@ export default function Home() {
                     checked={checked}
                     onChange={handleCheckboxChange}
                     value='20'
+                />
+            </div>
+            <div>
+                <Select
+                    name='select'
+                    id='paises'
+                    label='Seleccione un pais'
+                    width='w-80'
+                    options={['Colombia', 'Canada', 'Paris', 'Argentina']}
                 />
             </div>
             <div className='flex flex-row'>
