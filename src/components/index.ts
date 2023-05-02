@@ -1,2 +1,3 @@
-export { Checkbox } from './Checkbox';
-export { Card } from './Card';
+export { Checkbox } from './checkbox';
+export { Card } from './card';
+export { Select } from './select';
