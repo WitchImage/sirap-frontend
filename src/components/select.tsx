@@ -2,22 +2,37 @@ interface Props {
     label: string;
     name: string;
     id?: string;
-    options: string[];
+    placeholder?: string;
+    options: Options[];
     width: string;
+    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+    onBlur: (event: React.FocusEvent<HTMLSelectElement>) => void;
+    value?: string;
 }
-export function Select({ label, id = '', name, options, width }: Props) {
-    const existId = () => {
-        return id !== '' ? id : name;
-    };
 
+interface Options {
+    key: string;
+    value: string;
+    valueToShow: string;
+}
+
+export function Select({
+    label,
+    id,
+    name,
+    placeholder,
+    options,
+    width,
+    onChange,
+}: Props) {
     const showOptions = () => {
         return options.map(option => {
             return (
                 <option
-                    key={option}
-                    value={option}
+                    key={option.key}
+                    value={option.value}
                 >
-                    {option}
+                    {option.valueToShow}
                 </option>
             );
         });
@@ -27,16 +42,24 @@ export function Select({ label, id = '', name, options, width }: Props) {
         <div className={`${width} m-3`}>
             <label
                 className='block mb-2 text-sm font-medium text-white'
-                htmlFor={existId()}
+                htmlFor={id ?? name}
             >
                 {label}
             </label>
             <select
                 className='bg-backgroundDark border border-backgroundDark text-white text-sm rounded-lg focus:ring-blue-700 focus:border-blue-700 block w-full p-2.5'
                 name={name}
-                id={existId()}
+                id={id ?? name}
+                onChange={onChange}
             >
-                <option selected>Chose option</option>
+                {placeholder && (
+                    <option
+                        disabled
+                        selected
+                    >
+                        {placeholder}
+                    </option>
+                )}
                 {showOptions()}
             </select>
         </div>
