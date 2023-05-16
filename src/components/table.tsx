@@ -1,7 +1,6 @@
-type TableItem = Record<string, any>;
-interface Props<T extends TableItem> {
+interface Props {
     columnNames: string[];
-    data: T[];
+    data: Record<string, any>;
 }
 
 /*
@@ -9,34 +8,33 @@ interface Props<T extends TableItem> {
     Se especifica el nombre de las columnas y se pasa una lista 
     de objetos para visualizar los datos correspondientes
 */
-export function Table<T extends TableItem>({ columnNames, data }: Props<T>) {
+export function Table({ columnNames, data }: Props) {
+    const dataArray = Object.values(data);
     return (
         <div className='relative overflow-x-auto rounded-lg'>
-            <table className='w-full divide-grayLight text-white rounded-lg'>
-                <thead className='bg-darkGray pt-5'>
+            <table className='table-fixed w-full divide-white text-white rounded-lg'>
+                <thead className='text-left bg-backgroundDark pt-5'>
                     <tr>
                         {columnNames.map(name => (
-                            <th
-                                className='px-6 py-3'
-                                key={name}
-                            >
-                                {name}
-                            </th>
+                            // eslint-disable-next-line react/jsx-key
+                            <th className='px-6 py-3'>{name}</th>
                         ))}
                     </tr>
                 </thead>
-                <tbody className='bg-backgroundDark divide-y divide-grayLight'>
-                    {data.map((item: T, index) => {
+                <tbody className='bg-transparent divide-y divide-white'>
+                    {dataArray.map((item: any, index: any) => {
                         return (
                             <tr key={index}>
-                                {Object.values(item).map((value, index) => (
-                                    <td
-                                        className='p-3'
-                                        key={index}
-                                    >
-                                        {value}
-                                    </td>
-                                ))}
+                                {Object.values(item).map(
+                                    (value: any, index: number) => (
+                                        // eslint-disable-next-line react/jsx-key
+                                        <td className='px-6 py-2'>
+                                            {typeof value !== 'undefined'
+                                                ? value
+                                                : ''}
+                                        </td>
+                                    )
+                                )}
                             </tr>
                         );
                     })}
