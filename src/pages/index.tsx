@@ -1,7 +1,8 @@
 // import { Inter } from 'next/font/google';
 // const inter = Inter({ subsets: ['latin'] });
 
-import { Card, Checkbox, Select } from '@/components';
+import { Card, Checkbox, Select, Table } from '@/components';
+import { type BasePerson } from '@/types';
 import { type GetServerSideProps } from 'next';
 import { useState } from 'react';
 
@@ -12,6 +13,30 @@ export default function Home() {
     */
     const [checked, setChecked] = useState(false);
     const [valueSelect, setValueSelect] = useState('');
+
+    const people: BasePerson[] = [
+        {
+            name: 'juan',
+            document: '11234432',
+            documentType: 'cc',
+            createdAt: new Date().toUTCString(),
+            updatedAt: '',
+        },
+        {
+            name: 'Pepe',
+            document: '11234432',
+            documentType: 'cc',
+            createdAt: new Date().toUTCString(),
+            updatedAt: '',
+        },
+        {
+            name: 'Luis',
+            document: '11234432',
+            documentType: 'cc',
+            createdAt: new Date().toUTCString(),
+            updatedAt: '',
+        },
+    ];
 
     const handleCheckboxChange = (checked: boolean) => {
         setChecked(checked);
@@ -81,6 +106,18 @@ export default function Home() {
                         corrupti provident! Qui fugit nobis quae laborum ipsum.
                     </p>
                 </Card>
+            </div>
+            <div className='ml-100 mr-100'>
+                <Table<BasePerson>
+                    columnNames={[
+                        'Name',
+                        'Document',
+                        'DocumentType',
+                        'CreatedAt',
+                        'UpdatedAt',
+                    ]}
+                    data={people}
+                />
             </div>
         </main>
     );
