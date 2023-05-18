@@ -1,7 +1,7 @@
 // import { Inter } from 'next/font/google';
 // const inter = Inter({ subsets: ['latin'] });
 
-import { Card, Checkbox, Select } from '@/components';
+import { Avatar, Card, Checkbox, Select } from '@/components';
 import { type GetServerSideProps } from 'next';
 import { useState } from 'react';
 
@@ -81,6 +81,20 @@ export default function Home() {
                         corrupti provident! Qui fugit nobis quae laborum ipsum.
                     </p>
                 </Card>
+            </div>
+            <div className='flex flex-row'>
+                <Avatar
+                    name='Juan'
+                    size='sm'
+                />
+                <Avatar
+                    name='Juan'
+                    size='md'
+                />
+                <Avatar
+                    name='Juan'
+                    size='lg'
+                />
             </div>
         </main>
     );
