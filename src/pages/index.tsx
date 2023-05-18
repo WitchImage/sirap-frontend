@@ -1,7 +1,7 @@
 // import { Inter } from 'next/font/google';
 // const inter = Inter({ subsets: ['latin'] });
 
-import { Card, Checkbox, Select } from '@/components';
+import { Avatar, Card, Checkbox, Select } from '@/components';
 import { type GetServerSideProps } from 'next';
 import { useState } from 'react';
 
@@ -81,6 +81,22 @@ export default function Home() {
                         corrupti provident! Qui fugit nobis quae laborum ipsum.
                     </p>
                 </Card>
+            </div>
+            {/** Componente de avatar */}
+            <div className='flex flex-row'>
+                <Avatar
+                    size='sm'
+                    name='Juan'
+                />
+                <Avatar
+                    size='md'
+                    name='Juan'
+                    imgPath='https://cdn-icons-png.flaticon.com/512/3135/3135768.png'
+                />
+                <Avatar
+                    size='lg'
+                    name='Juan'
+                />
             </div>
         </main>
     );
