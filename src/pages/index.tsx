@@ -1,7 +1,7 @@
 // import { Inter } from 'next/font/google';
 // const inter = Inter({ subsets: ['latin'] });
 
-import { Avatar, Card, Checkbox, Select } from '@/components';
+import { Avatar, Card, Checkbox, Input, Select } from '@/components';
 import { type GetServerSideProps } from 'next';
 import { useState } from 'react';
 
@@ -12,6 +12,7 @@ export default function Home() {
     */
     const [checked, setChecked] = useState(false);
     const [valueSelect, setValueSelect] = useState('');
+    const [inputValue, setInputValue] = useState('');
 
     const handleCheckboxChange = (checked: boolean) => {
         setChecked(checked);
@@ -25,6 +26,14 @@ export default function Home() {
 
     const handleSelectBlur = (event: React.FocusEvent<HTMLSelectElement>) => {
         console.log('El usuario a perdido el foco del elemento ', valueSelect);
+    };
+
+    const handleInput = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setInputValue(event.target.value);
+    };
+
+    const handleInputBlur = (event: React.FocusEvent<HTMLSelectElement>) => {
+        console.log('El usuario a perdido el foco del Input', inputValue);
     };
 
     return (
@@ -94,6 +103,17 @@ export default function Home() {
                 <Avatar
                     name='Juan'
                     size='lg'
+                />
+            </div>
+
+            <div className='flex flex-col p-9'>
+                <Input
+                    onChange={handleInput}
+                    onBlur={handleInputBlur}
+                    id='nombre'
+                    label='Nombre'
+                    value={inputValue}
+                    placeholder='Ingrese el nombre'
                 />
             </div>
         </main>
