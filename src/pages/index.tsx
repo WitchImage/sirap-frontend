@@ -1,7 +1,7 @@
 // import { Inter } from 'next/font/google';
 // const inter = Inter({ subsets: ['latin'] });
 
-import { Avatar, Card, Checkbox, Input, Select } from '@/components';
+import { Avatar, Button, Card, Checkbox, Input, Select } from '@/components';
 import { type GetServerSideProps } from 'next';
 import { useState } from 'react';
 
@@ -16,6 +16,10 @@ export default function Home() {
 
     const handleCheckboxChange = (checked: boolean) => {
         setChecked(checked);
+    };
+
+    const handleButton = () => {
+        console.log('Prueba boton');
     };
 
     const handleSelectChange = (
@@ -114,6 +118,13 @@ export default function Home() {
                     label='Nombre'
                     value={inputValue}
                     placeholder='Ingrese el nombre'
+                />
+            </div>
+            <div className='p-4'>
+                <Button
+                    onClick={handleButton}
+                    text='Test'
+                    width='w-32'
                 />
             </div>
         </main>
