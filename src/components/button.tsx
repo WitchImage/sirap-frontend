@@ -1,28 +1,21 @@
-import { useState } from 'react';
+import { type ReactNode } from 'react';
 
 interface Props {
-    width: string;
-    text: string;
+    children: ReactNode;
+    block?: boolean;
+    disabled?: boolean;
     onClick: () => void;
 }
-export function Button({ onClick, width, text }: Props) {
-    const [isClicked, setIsClicked] = useState(false);
-
-    const handleClick = () => {
-        setIsClicked(true);
-        onClick();
-        setTimeout(() => {
-            setIsClicked(false);
-        }, 300);
-    };
-
+export function Button({ onClick, block, children, disabled }: Props) {
     return (
         <button
-            onClick={handleClick}
-            className={`${isClicked ? 'scale-75' : 'scale-100'}
-            bg-blue-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-all duration-300 ${width}`}
+            onClick={onClick}
+            className={`
+                bg-blue-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-all duration-[0.2s] active:scale-[0.95]
+                ${block ? 'block' : 'w-fit'}
+            `}
         >
-            {text}
+            {children}
         </button>
     );
 }

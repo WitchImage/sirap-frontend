@@ -120,12 +120,13 @@ export default function Home() {
                     placeholder='Ingrese el nombre'
                 />
             </div>
-            <div className='p-4'>
+            <div className='p-4 w-40'>
                 <Button
+                    block
                     onClick={handleButton}
-                    text='Test'
-                    width='w-32'
-                />
+                >
+                    Test button
+                </Button>
             </div>
         </main>
     );
