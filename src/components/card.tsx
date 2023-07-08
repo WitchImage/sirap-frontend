@@ -5,7 +5,9 @@ interface Props {
 
 export function Card({ children, className }: Props) {
     return (
-        <div className={`${className} p-4  rounded-lg bg-backgroundDark`}>
+        <div
+            className={`${className} flex flex-col gap-6 items-center justify-start`}
+        >
             {children}
         </div>
     );
