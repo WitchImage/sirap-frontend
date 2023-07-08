@@ -6,7 +6,7 @@ export default function Login() {
         <main className='h-screen bg-background'>
             <section className='h-full md:flex md:items-center'>
                 <Card className='px-10 py-4 md:py-10 bg-backgroundDark h-full md:h-fit w-full md:w-[30%] rounded-none md:rounded-md mx-auto'>
-                    <h2 className='mb-4 self-start'>Bienvenido de vuelta!</h2>
+                    <h3 className='mb-4 self-start'>Bienvenido de vuelta!</h3>
                     <Input
                         name='email'
                         label='Email'
