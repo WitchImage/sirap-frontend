@@ -1,7 +1,7 @@
 import { type GetServerSideProps } from 'next';
 
 export default function Home() {
-    return <main className='min-h-screen bg-background'></main>;
+    return <main className='h-full bg-background'></main>;
 }
 
 export const getServerSideProps: GetServerSideProps = async context => {
