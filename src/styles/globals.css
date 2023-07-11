@@ -25,3 +25,14 @@
         @apply text-xl;
     }
 }
+
+@layer utilities {
+    .h-container {
+        height: calc(100% - 4rem);
+    }
+}
+
+#__next {
+    height: 100vh;
+    max-height: 100vh;
+}

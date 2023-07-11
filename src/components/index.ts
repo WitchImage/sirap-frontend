@@ -1,6 +1,7 @@
-export { Checkbox } from './checkbox';
+export { Checkbox } from './primitives/checkbox';
+export { Input } from './primitives//input';
+export { Select } from './primitives/select';
+export { Button } from './primitives/button';
+export { Layout } from './layout/layout';
 export { Card } from './card';
-export { Select } from './select';
 export { Avatar } from './avatar';
-export { Input } from './input';
-export { Button } from './button';
