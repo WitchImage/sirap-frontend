@@ -34,7 +34,7 @@ export default function Login() {
                 </Button>
                 <span className='text-sm'>
                     ¿No tienes cuenta?{' '}
-                    <Link href='/register'>Crea una acá</Link>
+                    <Link href='/company/operator/register'>Crea una acá</Link>
                 </span>
             </Card>
         </main>

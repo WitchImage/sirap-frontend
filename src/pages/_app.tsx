@@ -1,8 +1,11 @@
 import '@/styles/globals.css';
+import '@/styles/phoneInput.css';
+import 'react-phone-number-input/style.css';
 import type { AppProps } from 'next/app';
 import { Layout, Loader } from '@/components';
 import { Router } from 'next/router';
 import { useEffect, useState } from 'react';
+import { ToastProvider } from '@/hooks';
 
 export default function App({ Component, pageProps }: AppProps) {
     const [loading, setLoading] = useState(false);
@@ -23,8 +26,13 @@ export default function App({ Component, pageProps }: AppProps) {
     }
 
     return (
-        <Layout>
-            <Component {...pageProps} />
-        </Layout>
+        <ToastProvider
+            className={''}
+            position={'top-right'}
+        >
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        </ToastProvider>
     );
 }
