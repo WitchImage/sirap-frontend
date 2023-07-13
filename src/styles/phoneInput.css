@@ -1,0 +1,23 @@
+.phone-input {
+    background-color: #191e29;
+    background: #191e29;
+    color: #e1e8f5;
+}
+
+.phone-input input {
+    background-color: #191e29;
+    background: #191e29;
+    color: #e1e8f5;
+}
+
+.phone-input select {
+    background-color: #191e29;
+    background: #191e29;
+    color: #e1e8f5;
+}
+
+.phone-input:focus {
+    outline: none;
+    background-color: #191e29;
+    border-color: "#3F66E1";
+}

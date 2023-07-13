@@ -3,7 +3,7 @@ export interface TimeStamps {
     updatedAt: string;
 }
 
-export interface Token extends Omit<TimeStamps, 'updatedAt'> {
+export interface Token extends Omit<TimeStamps, "updatedAt"> {
     ip?: string;
     token: string;
     expirationDate: string;
