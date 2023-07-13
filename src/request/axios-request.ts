@@ -1,11 +1,11 @@
 /* eslint-disable indent */
-import type { HTTPMethod, Request, Response } from "@/types";
+import type { HTTPMethod, Request, Response } from '@/types';
 import axios, {
     type AxiosInstance,
     type AxiosError,
     type AxiosResponse,
-} from "axios";
-import { baseRequestConfig } from "./base";
+} from 'axios';
+import { baseRequestConfig } from './base';
 
 console.log(process.env.NEXT_PUBLIC_API);
 const requestAPI: AxiosInstance = axios.create({
@@ -26,12 +26,12 @@ function processErrorResponse<T>(axiosError: AxiosError): Response<T> {
         data: undefined as T,
         error: {
             msg: axiosError.message,
-            code: axiosError.code ?? "",
+            code: axiosError.code ?? '',
         },
     };
 }
 
-function getRequest<T>(request: Omit<Request, "body">): Promise<Response<T>> {
+function getRequest<T>(request: Omit<Request, 'body'>): Promise<Response<T>> {
     const response: Promise<Response<T>> = requestAPI
         .get(request.url, { params: request.params })
         .then((value: AxiosResponse) => processSuccessResponse<T>(value))
@@ -72,16 +72,16 @@ export async function request<T>(
     request: Request
 ): Promise<Response<T>> {
     switch (method) {
-        case "GET":
+        case 'GET':
             return await getRequest(request);
-        case "POST":
+        case 'POST':
             return await postRequest(request);
-        case "PUT":
+        case 'PUT':
             return await putRequest(request);
-        case "DELETE":
+        case 'DELETE':
             return await deleteRequest(request);
         default:
-            console.log("default");
+            console.log('default');
             return { status: 500, data: undefined as T };
     }
 }

@@ -1,5 +1,5 @@
 export type Body = Record<string, any>;
-export type HTTPMethod = "GET" | "POST" | "DELETE" | "PUT";
+export type HTTPMethod = 'GET' | 'POST' | 'DELETE' | 'PUT';
 export type QueryParams = Record<string, string | number> | URLSearchParams;
 export type Headers = Record<string, string>;
 export type BaseRequestConfig = Record<string, string>;
