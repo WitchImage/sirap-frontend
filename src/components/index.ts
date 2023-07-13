@@ -6,3 +6,4 @@ export { Layout } from './layout/layout';
 export { Card } from './card';
 export { Avatar } from './avatar';
 export { Phone } from './phone';
+export { Loader } from './loader';
